@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Student Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<form id="studentRegistrationForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required placeholder="Enter Your Full Name"  >
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required placeholder="Enter Your Username" >
+
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required required placeholder="Enter Your Email" >
+
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required placeholder="Enter Your Date of birth" >
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="4" required placeholder="Enter Your Address" ></textarea>
+
+    <label for="studentID">Student ID:</label>
+    <input type="text" id="studentID" name="studentID" required placeholder="Enter Your Student Id" >
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required placeholder="Enter Your Password">
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="password" required placeholder="Re-Enter Your Password">
+
+    <button type="button" onclick="validateForm()">Submit</button>
+</form>
+
+<script>
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var dob = document.getElementById("dob").value;
+        var address = document.getElementById("address").value;
+        var studentID = document.getElementById("studentID").value;
+        var password = document.getElementById("password").value;
+        var password = document.getElementById("password").value;
+
+        // Simple email validation
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Invalid email address");
+            return;
+        }
+
+        // Check if a date of birth is provided
+        if (!dob) {
+            alert("Please provide a date of birth");
+            return;
+        }
+
+        // Here, you would typically send the data to a backend for further processing and storage.
+        // For now, let's display a confirmation message.
+        alert("Registration successful!");
+
+        // Optional: Redirect to a confirmation page
+        // window.location.href = "confirmation.html";
+    }
+</script>
+
+</body>
+</html>
